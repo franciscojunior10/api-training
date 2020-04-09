@@ -1,5 +1,7 @@
 import Sequelize, { Model } from 'sequelize';
 
+import bcrypt from 'bcryptjs';
+
 import generatePasswordHash from '../utils/generatePasswordHash';
 
 class User extends Model {
@@ -22,6 +24,10 @@ class User extends Model {
         });
 
         return this;
+    }
+
+    ckeckPassword(password) {
+        return bcrypt.compare(password, this.password_hash);
     }
 }
 
