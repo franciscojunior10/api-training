@@ -1,5 +1,9 @@
 import { Router } from 'express';
 
+import swaggerUi from 'swagger-ui-express';
+
+import swaggerDocument from './app/docs/swagger.json';
+
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 
@@ -9,6 +13,8 @@ const routes = new Router();
 
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
+
+routes.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 routes.use(authMiddleware);
 
