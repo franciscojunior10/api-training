@@ -1,10 +1,18 @@
-import 'dotenv/config';
+// import 'dotenv/config';
 
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 
-import User from '../models/User';
+// import User from '../models/User';
 
-import configAuth from '../../config/auth';
+// import configAuth from '../../config/auth';
+
+require('dotenv/config');
+
+const jwt = require('jsonwebtoken');
+
+const User = require('../models/User');
+
+const configAuth = require('../../config/auth');
 
 class SessionController {
     async store(req, res) {
@@ -37,4 +45,5 @@ class SessionController {
     }
 }
 
-export default new SessionController();
+// export default new SessionController();
+module.exports = new SessionController();

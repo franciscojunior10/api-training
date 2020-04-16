@@ -1,8 +1,15 @@
-import Sequelize, { Model } from 'sequelize';
+// import Sequelize, { Model } from 'sequelize';
 
-import bcrypt from 'bcryptjs';
+// import bcrypt from 'bcryptjs';
 
-import generatePasswordHash from '../utils/generatePasswordHash';
+// import generatePasswordHash from '../utils/generatePasswordHash';
+
+const Sequelize = require('sequelize');
+const { Model } = require('sequelize');
+
+const bcrypt = require('bcryptjs');
+
+const generatePasswordHash = require('../utils/generatePasswordHash');
 
 class User extends Model {
     static init(sequelize) {
@@ -31,4 +38,5 @@ class User extends Model {
     }
 }
 
-export default User;
+// export default User;
+module.exports = User;
