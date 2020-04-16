@@ -1,21 +1,12 @@
 require('dotenv/config');
 
-// module.exports = {
-//     dialect: 'postgres',
-//     host: process.env.DB_HOST,
-//     username: process.env.DB_USER,
-//     password: process.env.DB_PASS,
-//     database: process.env.DB_NAME,
-//     define: {
-//         timestamps: true,
-//         underscored: true,
-//         underscoredAll: true,
-//     },
-// };
-
 module.exports = {
     dialect: 'postgres',
-    url: process.env.ELEPHANTSQL_URL,
+    host: process.env.ELEPHANTSQL_HOST,
+    username: process.env.ELEPHANTSQL_USER,
+    password: process.env.ELEPHANTSQL_PASS,
+    database: process.env.ELEPHANTSQL_NAME,
+    port: process.env.ELEPHANTSQL_PORT,
     define: {
         timestamps: true,
         underscored: true,
