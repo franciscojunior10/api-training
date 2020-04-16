@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import cors from 'cors';
+
 import swaggerUi from 'swagger-ui-express';
 
 import swaggerDocument from './app/docs/swagger.json';
@@ -10,6 +12,8 @@ import SessionController from './app/controllers/SessionController';
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
+
+routes.use(cors());
 
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
