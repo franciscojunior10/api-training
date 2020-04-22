@@ -8,6 +8,7 @@ module.exports = {
     password: process.env.ELEPHANTSQL_PASS,
     database: process.env.ELEPHANTSQL_NAME,
     port: process.env.ELEPHANTSQL_PORT,
+    logging: false,
     storage: './__tests__/database.sqlite',
     define: {
         timestamps: true,
