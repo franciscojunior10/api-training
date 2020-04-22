@@ -30,7 +30,7 @@ describe('Session', () => {
         expect(response.status).toBe(401);
     });
 
-    it('should be able to verify password', async () => {
+    it('should be able to verify password correct', async () => {
         const response = await request(app).post('/sessions').send({
             email: 'testuser@gmail.com',
             password: '123',
