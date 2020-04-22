@@ -7,7 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "husky": {
     "hooks": {
@@ -28,6 +31,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^25.2.1",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -35,10 +39,13 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
+    "jest": "^25.4.0",
     "nodemon": "^2.0.2",
     "prettier": "^2.0.2",
     "sequelize-cli": "^5.5.1",
-    "sucrase": "^3.13.0"
+    "sqlite3": "^4.1.1",
+    "sucrase": "^3.13.0",
+    "supertest": "^4.0.2"
   },
   "config": {
     "commitizen": {

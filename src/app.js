@@ -2,7 +2,7 @@
 // import routes from './routes';
 
 // import './database';
-
+require('./bootstrap');
 const express = require('express');
 const routes = require('./routes');
 
